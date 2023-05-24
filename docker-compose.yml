@@ -1,0 +1,30 @@
+version: '3'
+services:
+
+  project1:
+    image: project1
+    build:
+      context: ./project1
+      dockerfile: Dockerfile
+    ports:
+      - "3000-3100:3000"
+    restart: always
+
+  project2:
+    image: project2
+    build:
+      context: ./project2
+      dockerfile: Dockerfile
+    ports:
+      - "5000:5000"
+    restart: always
+
+  project3:
+    image: project3
+    build:
+      context: ./project3
+      dockerfile: Dockerfile
+    ports:
+      - "5001:5001"
+    restart: always
+
