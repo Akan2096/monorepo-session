@@ -51,7 +51,7 @@ jobs:
           file: ./${{ matrix.microservice }}/Dockerfile
           push: true
           tags: |
-            docker.io/akan2096/{{ matrix.microservice }}
+            docker.io/akan2096/${{ matrix.microservice }}
 
 #  deploy:
 #    needs: build
