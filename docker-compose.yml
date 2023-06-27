@@ -1,14 +1,16 @@
 version: '3'
 services:
 
-  project1:
-    image: project1
+  project3:
+    image: project3
     build:
-      context: ./project1
+      context: ./project3
       dockerfile: Dockerfile
     ports:
-      - "3000-3100:3000"
+      - "5001:5001"
     restart: always
+    depends_on:
+      - project2
 
   project2:
     image: project2
@@ -18,13 +20,17 @@ services:
     ports:
       - "5000:5000"
     restart: always
+    depends_on:
+      - project1
 
-  project3:
-    image: project3
+  project1:
+    image: project1
     build:
-      context: ./project3
+      context: ./project1
       dockerfile: Dockerfile
     ports:
-      - "5001:5001"
+      - "3000-3100:3000"
     restart: always
+
+
 
